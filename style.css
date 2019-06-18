@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: #FFFFFF;
+	font-family: Arial;
+}
+
+.memory-game {
+  width: 900px;
+  height: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-header {
+	width: 100%;
+	text-align: center;
+}
+
+.memory-header h1 {
+	font-size: 40px;
+	font-family: Arial;
+	color: #404040;
+}
+
+.memory-header button {
+	width: calc(100% - 10px);
+	height: 30px;
+	cursor: pointer;
+	background-color: #4267b2;
+	border: 0;
+	color: white;
+	font-size: 16px;
+	margin-top: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.memory-ranking {
+	margin: 5px;
+	width: 230px;
+  height: 640px;
+  perspective: 1000px;
+}
+
+.memory-ranking .title {
+	background-color: #333333;
+	padding: 7px;
+  color: #FFFFFF;
+	height: 30px;
+}
+
+.memory-ranking .item {
+	padding: 7px;
+	height: 30px;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.memory-cards {
+  width: 640px;
+  height: 640px;
+  margin-right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+	cursor: pointer;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  background: #dedede;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
